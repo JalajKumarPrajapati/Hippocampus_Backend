@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { MONGODB_URI } from "./config.js";
 
-mongoose.connect("mongodb+srv://admin:lhzXqowC3CucqLd1@cluster0.oovxmev.mongodb.net/hippo_v1")
+mongoose.connect(MONGODB_URI)
 
 const UserSchema=new mongoose.Schema({
     username:{ type: String, required: true },

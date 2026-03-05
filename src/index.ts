@@ -6,7 +6,7 @@ import {random} from "./utils.js"
 import bcrypt from "bcrypt";
 import {UserModel,ContentModel,LinkModel} from "./db.js"
 import {userMiddleware} from "./middleware.js"
-import {JWT_PASSWORD} from "./config.js"
+import {JWT_PASSWORD, PORT} from "./config.js"
 import cors from "cors";
 const app = express();
 app.use(express.json());
@@ -170,8 +170,8 @@ app.get("/api/v1/hippo/:shareLink",async (req, res)=>{
 })
 
 
-app.listen(3001,()=>{
-    console.log("Server started on port 3000");
+app.listen(PORT,()=>{
+    console.log(`Server started on port ${PORT}`);
 });
 
 //what is regex
